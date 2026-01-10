@@ -27,54 +27,13 @@ Object
 
 uses uClassAutoFree
 
-...
-
-var
-  LTest: TStringList;
-begin
- LTest:= Garbage.Add<TStringList>(TStringList.Create);
- ...
- ...
- ...
- ... 
-end;
-
-```
-
-LTest will be released when Garbage is destroyed
-```pascal
-
-var
-  LTest: TStringList;
-begin
-  LTest:= Garbage.Add<TStringList>(TStringList.Create);
-  try
-    LTest.Add('This');
-    LTest.Add('is a');
-    Ltest.Add('test with collect');
-    Showmessage(LTest.Text);
-  finally
-    Garbage.Collect(LTest);
-  end;
-end;
-
-```
-
-With input parameters in the create of the class to be collected
-
-```pascal
-begin
-  FTestClass:= Garbage.Add<TMyClass>(TMyClass.Create('with input params'));
-end;
-```
-
-Example of how to use the TAutoCollect class
+Example of how to use the TAutoFree class
 
 ```pascal
 var
   LLocal: TMyClass;
 begin
-  LLocal:= TAutoCollect<TMyClass>.New(TMyClass.Create).GetInstance;
+  LLocal:= TAutoFree<TMyClass>.New(TMyClass.Create).GetInstance;
   LLocal.FParam:= 'test'; 
   Showmessage(LLocal.FParam);  
   
@@ -82,5 +41,3 @@ begin
 end;
 
 ```
-
-In the 'sample' folder, there are more usage examples
