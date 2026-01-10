@@ -38,7 +38,7 @@ end;
 
 destructor TAutoFree<T>.Destroy;
 begin
-  FreeAndNil(FInstance);
+  FInstance.Free;
   inherited;
 end;
 
