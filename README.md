@@ -2,8 +2,10 @@
 
 
 # Description
+The TAutoFree class is a minimalist part of another repository of mine that provides the same functionality.
+https://github.com/daviladanielc/Delphi-Captcha-Generator
 
-An attempt at automating the process of releasing objects in Delphi without the need to use Try Finally blocks to free objects after their usage.
+It is an attempt at automating the process of releasing objects in Delphi without the need to use Try Finally blocks to free objects after their usage.
 
 The idea behind this project is not to require the programmer to migrate their classes to an interface and to improve memory management. 
 With the TAutoFree class, it's possible to turn a simple class into something like a interface without implementing anything new.
